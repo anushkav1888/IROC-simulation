@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<robot name="differential_drive_robot">
+
+  <!-- Define the chassis -->
+  <link name="chassis">
+    <visual>
+      <geometry>
+        <box size="1 1 0.4"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- Define the wheels -->
+  <link name="wheel_front_left">
+    <visual>
+      <geometry>
+        <cylinder radius="0.2" length="0.1"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wheel_front_right">
+    <visual>
+      <geometry>
+        <cylinder radius="0.2" length="0.1"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wheel_back_left">
+    <visual>
+      <geometry>
+        <cylinder radius="0.2" length="0.1"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wheel_back_right">
+    <visual>
+      <geometry>
+        <cylinder radius="0.2" length="0.1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- Define the joints for the wheels -->
+  <joint name="joint_front_left" type="continuous">
+    <parent link="chassis"/>
+    <child link="wheel_front_left"/>
+    <origin xyz="0.5 0.5 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="joint_front_right" type="continuous">
+    <parent link="chassis"/>
+    <child link="wheel_front_right"/>
+    <origin xyz="0.5 -0.5 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="joint_back_left" type="continuous">
+    <parent link="chassis"/>
+    <child link="wheel_back_left"/>
+    <origin xyz="-0.5 0.5 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="joint_back_right" type="continuous">
+    <parent link="chassis"/>
+    <child link="wheel_back_right"/>
+    <origin xyz="-0.5 -0.5 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Define the arm -->
+  <link name="arm_base">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.3"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="arm_horizontal">
+    <visual>
+      <geometry>
+        <box size="0.4 0.05 0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="arm_end">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.3"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- Define the joints for the arm -->
+  <joint name="joint_arm_revolute" type="revolute">
+    <parent link="chassis"/>
+    <child link="arm_base"/>
+    <origin xyz="0 0 0.4"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <joint name="joint_arm_horizontal" type="fixed">
+    <parent link="arm_base"/>
+    <child link="arm_horizontal"/>
+    <origin xyz="0 0 0.15"/>
+  </joint>
+  <joint name="joint_arm_vertical" type="prismatic">
+    <parent link="arm_horizontal"/>
+    <child link="arm_end"/>
+    <origin xyz="0.2 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.3"/>
+  </joint>
+
+  <!-- Define the gripper -->
+  <link name="gripper">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- Define the joint for the gripper -->
+  <joint name="joint_gripper" type="fixed">
+    <parent link="arm_end"/>
+    <child link="gripper"/>
+    <origin xyz="0 0 0.15"/>
+  </joint>
+
+</robot>
