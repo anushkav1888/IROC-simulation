@@ -14,7 +14,7 @@
     <origin xyz="0   -0.1  -0.15" rpy="-1.57  0    0"/>
     <axis xyz="0  0 -1"/>
     <limit lower="-1.79769e+308" upper="1.79769e+308" effort="10" velocity="10"/>
-    <!-- <dynamics damping="0.7"/> -->
+    <dynamics damping="0.7"/>
   </joint>
   <joint name="joint_3_4" type="revolute">
     <parent link="elbow_palm_3"/>
@@ -265,6 +265,27 @@
       </geometry>
     </visual>
   </link>
+  <!-- camera link -->
+    <link name="camera_link">
+    <inertial>
+      <mass value="1"/>
+      <origin xyz="0 0 10" rpy="0 0 0"/>
+      <inertia ixx="0.166667" ixy="0" ixz="0" iyy="0.166667" iyz="0" izz="0.166667"/>
+    </inertial>
+    <collision name="robot_with_arm_final__collision">
+      <origin xyz="-0.79586  0.14729  1.0849" rpy="0      0      1.61257"/>
+      <geometry>
+        <box size="0.4 0.4 0.4"/>
+      </geometry>
+    </collision>
+    <visual name="robot_with_arm_final__visual">
+      <origin xyz="-0.79586  0.14729  1.0849" rpy="0      0      1.61257"/>
+      <geometry>
+        <box size="0.4 0.4 0.4"/>
+      </geometry>
+    </visual>
+  </link>
+  
   <!-- plugin -->
   <gazebo>
   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
@@ -311,7 +332,7 @@
     </sensor>
   </gazebo>
 
-<gazebo reference="mrt/camera_link">
+<gazebo reference="camera_link">
     <!-- <sensor type="camera" name="camera1"> -->
     <sensor type="depth" name="camera1">
       <update_rate>15.0</update_rate>
