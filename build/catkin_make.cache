@@ -1,2 +1,2 @@
-my_robot_package:pysdf:turtlebot3_simulations/turtlebot3_fake:turtlebot3_simulations/turtlebot3_gazebo:turtlebot3_simulations/turtlebot3_simulations
+iroc_auto:pysdf:turtlebot3_simulations/turtlebot3_fake:turtlebot3_simulations/turtlebot3_gazebo:turtlebot3_simulations/turtlebot3_simulations
 -DCATKIN_DEVEL_PREFIX=/home/anushka/iroc_isro/devel -DCMAKE_INSTALL_PREFIX=/home/anushka/iroc_isro/install -G Unix Makefiles

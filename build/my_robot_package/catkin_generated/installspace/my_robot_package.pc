@@ -1,8 +1,0 @@
-prefix=/home/anushka/iroc_isro/install
-
-Name: my_robot_package
-Description: Description of my_robot_package
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

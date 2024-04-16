@@ -1,0 +1,8 @@
+prefix=/home/anushka/iroc_isro/devel
+
+Name: iroc_auto
+Description: Description of iroc_auto
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

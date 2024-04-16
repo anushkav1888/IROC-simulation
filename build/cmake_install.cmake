@@ -132,7 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/anushka/iroc_isro/build/gtest/cmake_install.cmake")
   include("/home/anushka/iroc_isro/build/turtlebot3_simulations/turtlebot3_simulations/cmake_install.cmake")
-  include("/home/anushka/iroc_isro/build/my_robot_package/cmake_install.cmake")
+  include("/home/anushka/iroc_isro/build/iroc_auto/cmake_install.cmake")
   include("/home/anushka/iroc_isro/build/pysdf/cmake_install.cmake")
   include("/home/anushka/iroc_isro/build/turtlebot3_simulations/turtlebot3_fake/cmake_install.cmake")
   include("/home/anushka/iroc_isro/build/turtlebot3_simulations/turtlebot3_gazebo/cmake_install.cmake")

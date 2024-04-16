@@ -366,10 +366,10 @@ EMPY_SCRIPT:STRING=/usr/lib/python3/dist-packages/em.py
 Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
 
 //Path to a file.
-FCL_INCLUDE_DIRS:PATH=/usr/include
+FCL_INCLUDE_DIRS:PATH=/opt/ros/noetic/include
 
 //Path to a library.
-FCL_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libfcl.so
+FCL_LIBRARIES:FILEPATH=/opt/ros/noetic/lib/x86_64-linux-gnu/libfcl.so
 
 //Path to a library.
 GMOCK_LIBRARY:FILEPATH=GMOCK_LIBRARY-NOTFOUND
@@ -797,9 +797,6 @@ boost_thread_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.71.0
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 
-//The directory containing a CMake configuration file for catkin_simple.
-catkin_simple_DIR:PATH=catkin_simple_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for ccd.
 ccd_DIR:PATH=ccd_DIR-NOTFOUND
 
@@ -909,6 +906,12 @@ ignition-msgs5_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-msgs5
 //The directory containing a CMake configuration file for ignition-transport8.
 ignition-transport8_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-transport8
 
+//Value Computed by CMake
+iroc_auto_BINARY_DIR:STATIC=/home/anushka/iroc_isro/build/iroc_auto
+
+//Value Computed by CMake
+iroc_auto_SOURCE_DIR:STATIC=/home/anushka/iroc_isro/src/iroc_auto
+
 //The directory containing a CMake configuration file for jsoncpp.
 jsoncpp_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/jsoncpp
 
@@ -923,12 +926,6 @@ message_generation_DIR:PATH=/opt/ros/noetic/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
-
-//Value Computed by CMake
-my_robot_package_BINARY_DIR:STATIC=/home/anushka/iroc_isro/build/my_robot_package
-
-//Value Computed by CMake
-my_robot_package_SOURCE_DIR:STATIC=/home/anushka/iroc_isro/src/my_robot_package
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/noetic/share/nav_msgs/cmake
@@ -973,7 +970,19 @@ pkgcfg_lib_PC_CCD_m:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
 pkgcfg_lib_PC_CURL_curl:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
 
 //Path to a library.
-pkgcfg_lib_PC_FCL_fcl:FILEPATH=/usr/lib/x86_64-linux-gnu/libfcl.so
+pkgcfg_lib_PC_FCL_ccd:FILEPATH=/usr/lib/x86_64-linux-gnu/libccd.so
+
+//Path to a library.
+pkgcfg_lib_PC_FCL_fcl:FILEPATH=/opt/ros/noetic/lib/x86_64-linux-gnu/libfcl.so
+
+//Path to a library.
+pkgcfg_lib_PC_FCL_m:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
+
+//Path to a library.
+pkgcfg_lib_PC_FCL_octomap:FILEPATH=/opt/ros/noetic/lib/liboctomap.so
+
+//Path to a library.
+pkgcfg_lib_PC_FCL_octomath:FILEPATH=/opt/ros/noetic/lib/liboctomath.so
 
 //Path to a library.
 pkgcfg_lib_TINYXML2_tinyxml2:FILEPATH=/usr/lib/x86_64-linux-gnu/libtinyxml2.so
@@ -1031,12 +1040,6 @@ sdformat9_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/sdformat9
 
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
-
-//Value Computed by CMake
-simple_mobile_robot_BINARY_DIR:STATIC=/home/anushka/iroc_isro/build/simple_mobile_robot
-
-//Value Computed by CMake
-simple_mobile_robot_SOURCE_DIR:STATIC=/home/anushka/iroc_isro/src/simple_mobile_robot
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
@@ -1327,7 +1330,7 @@ CURL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 DART_DEFINITIONS:INTERNAL=
 DART_INCLUDE_DIRS:INTERNAL=/usr/include
-DART_LIBRARIES:INTERNAL=dart;dart;dart
+DART_LIBRARIES:INTERNAL=dart
 //Boost min version requirement
 DART_MIN_BOOST_VERSION:INTERNAL=1.58.0
 DART_dart_DEFINITIONS:INTERNAL=
@@ -1344,7 +1347,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boo
 //Details about finding CURL
 FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcurl.so][/usr/include/x86_64-linux-gnu][c ][v7.68.0()]
 //Details about finding DART
-FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/include][dart;dart;dart][cfound components: dart ][v(6.6)]
+FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/include][dart][cfound components: dart ][v(6.6)]
 //Details about finding DL
 FIND_PACKAGE_MESSAGE_DETAILS_DL:INTERNAL=[true][v()]
 //Details about finding JSONCPP
@@ -1372,7 +1375,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_assimp:INTERNAL=[/usr/include][/usr/lib/x86_64-linu
 //Details about finding ccd
 FIND_PACKAGE_MESSAGE_DETAILS_ccd:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libccd.so][v2.0(2.0)]
 //Details about finding fcl
-FIND_PACKAGE_MESSAGE_DETAILS_fcl:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libfcl.so][v0.5.0(0.3.2)]
+FIND_PACKAGE_MESSAGE_DETAILS_fcl:INTERNAL=[/opt/ros/noetic/include][/opt/ros/noetic/lib/x86_64-linux-gnu/libfcl.so][v0.6.1(0.3.2)]
 GMOCK_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GMOCK_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/src/googletest/googlemock/include
 GMOCK_FROM_SOURCE_LIBRARIES:INTERNAL=gmock
@@ -1735,37 +1738,37 @@ PC_CURL_libcurl_INCLUDEDIR:INTERNAL=
 PC_CURL_libcurl_LIBDIR:INTERNAL=
 PC_CURL_libcurl_PREFIX:INTERNAL=
 PC_CURL_libcurl_VERSION:INTERNAL=
-PC_FCL_CFLAGS:INTERNAL=-std=c++11
+PC_FCL_CFLAGS:INTERNAL=-std=c++11;-I/opt/ros/noetic/include;-I/usr/include/eigen3
 PC_FCL_CFLAGS_I:INTERNAL=
 PC_FCL_CFLAGS_OTHER:INTERNAL=-std=c++11
 PC_FCL_FOUND:INTERNAL=1
-PC_FCL_INCLUDEDIR:INTERNAL=/usr/include
-PC_FCL_INCLUDE_DIRS:INTERNAL=
-PC_FCL_LDFLAGS:INTERNAL=-lfcl
+PC_FCL_INCLUDEDIR:INTERNAL=/opt/ros/noetic/include
+PC_FCL_INCLUDE_DIRS:INTERNAL=/opt/ros/noetic/include;/usr/include/eigen3
+PC_FCL_LDFLAGS:INTERNAL=-L/opt/ros/noetic/lib;-L/opt/ros/noetic/lib/x86_64-linux-gnu;-lfcl;-lccd;-lm;-loctomap;-loctomath
 PC_FCL_LDFLAGS_OTHER:INTERNAL=
-PC_FCL_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-PC_FCL_LIBRARIES:INTERNAL=fcl
-PC_FCL_LIBRARY_DIRS:INTERNAL=
+PC_FCL_LIBDIR:INTERNAL=/opt/ros/noetic/lib/x86_64-linux-gnu
+PC_FCL_LIBRARIES:INTERNAL=fcl;ccd;m;octomap;octomath
+PC_FCL_LIBRARY_DIRS:INTERNAL=/opt/ros/noetic/lib;/opt/ros/noetic/lib/x86_64-linux-gnu
 PC_FCL_LIBS:INTERNAL=
 PC_FCL_LIBS_L:INTERNAL=
 PC_FCL_LIBS_OTHER:INTERNAL=
 PC_FCL_LIBS_PATHS:INTERNAL=
 PC_FCL_MODULE_NAME:INTERNAL=fcl
-PC_FCL_PREFIX:INTERNAL=/usr
-PC_FCL_STATIC_CFLAGS:INTERNAL=-std=c++11
+PC_FCL_PREFIX:INTERNAL=/opt/ros/noetic
+PC_FCL_STATIC_CFLAGS:INTERNAL=-std=c++11;-I/opt/ros/noetic/include;-I/usr/include/eigen3
 PC_FCL_STATIC_CFLAGS_I:INTERNAL=
 PC_FCL_STATIC_CFLAGS_OTHER:INTERNAL=-std=c++11
-PC_FCL_STATIC_INCLUDE_DIRS:INTERNAL=
-PC_FCL_STATIC_LDFLAGS:INTERNAL=-lfcl
+PC_FCL_STATIC_INCLUDE_DIRS:INTERNAL=/opt/ros/noetic/include;/usr/include/eigen3
+PC_FCL_STATIC_LDFLAGS:INTERNAL=-L/opt/ros/noetic/lib;-L/opt/ros/noetic/lib/x86_64-linux-gnu;-lfcl;-lccd;-lm;-loctomap;-loctomath
 PC_FCL_STATIC_LDFLAGS_OTHER:INTERNAL=
 PC_FCL_STATIC_LIBDIR:INTERNAL=
-PC_FCL_STATIC_LIBRARIES:INTERNAL=fcl
-PC_FCL_STATIC_LIBRARY_DIRS:INTERNAL=
+PC_FCL_STATIC_LIBRARIES:INTERNAL=fcl;ccd;m;octomap;octomath
+PC_FCL_STATIC_LIBRARY_DIRS:INTERNAL=/opt/ros/noetic/lib;/opt/ros/noetic/lib/x86_64-linux-gnu
 PC_FCL_STATIC_LIBS:INTERNAL=
 PC_FCL_STATIC_LIBS_L:INTERNAL=
 PC_FCL_STATIC_LIBS_OTHER:INTERNAL=
 PC_FCL_STATIC_LIBS_PATHS:INTERNAL=
-PC_FCL_VERSION:INTERNAL=0.5.0
+PC_FCL_VERSION:INTERNAL=0.6.1
 PC_FCL_fcl_INCLUDEDIR:INTERNAL=
 PC_FCL_fcl_LIBDIR:INTERNAL=
 PC_FCL_fcl_PREFIX:INTERNAL=
@@ -2053,8 +2056,16 @@ pkgcfg_lib_PC_CCD_ccd-ADVANCED:INTERNAL=1
 pkgcfg_lib_PC_CCD_m-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_CURL_curl
 pkgcfg_lib_PC_CURL_curl-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_FCL_ccd
+pkgcfg_lib_PC_FCL_ccd-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_FCL_fcl
 pkgcfg_lib_PC_FCL_fcl-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_FCL_m
+pkgcfg_lib_PC_FCL_m-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_FCL_octomap
+pkgcfg_lib_PC_FCL_octomap-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_PC_FCL_octomath
+pkgcfg_lib_PC_FCL_octomath-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_TINYXML2_tinyxml2
 pkgcfg_lib_TINYXML2_tinyxml2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_UUID_uuid
