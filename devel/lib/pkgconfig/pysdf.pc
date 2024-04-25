@@ -1,8 +1,0 @@
-prefix=/home/anushka/iroc_isro/devel
-
-Name: pysdf
-Description: Description of pysdf
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,6 +1,6 @@
 <launch>
   <!-- Load robot description from URDF -->
-  <param name="robot_description" command="cat $(find iroc_auto)/urdf/my_urdf.urdf" />
+  <param name="robot_description" command="cat $(find iroc_auto)/urdf/iroc_simple.urdf" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
   <!-- Spawn robot into the simulation -->
   <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-urdf -model differential_drive_robot -param robot_description -x 0 -y 0 -z 0" />
